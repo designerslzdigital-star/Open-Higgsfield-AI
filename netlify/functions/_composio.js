@@ -56,7 +56,7 @@ async function activeAccount(toolkit) {
 
 async function proxyExecute(accountId, endpoint, method = 'GET', body = undefined) {
   if (!hasComposio()) throw new Error('Composio credentials are not configured (COMPOSIO_API_KEY).')
-  const payload = { connected_account_id: accountId, endpoint, method }
+const payload = { connected_account_id: accountId, user_id: process.env.COMPOSIO_AIRTABLE_USER_ID, endpoint, method }
   if (body !== undefined) payload.body = body
   const res = await fetch(`${BASE}/tools/execute/proxy`, {
     method: 'POST',
