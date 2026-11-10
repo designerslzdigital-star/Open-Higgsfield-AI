@@ -14,13 +14,7 @@ const hasComposio = () => Boolean(apiKey())
 
 // ak_ keys are org keys sent via x-api-key; uak_ keys are user keys that need
 // the org/project headers. Both are accepted by the v3.1 proxy.
-const authHeadersFor = () => apiKey().startsWith('ak_')
-  ? { 'x-api-key': apiKey() }
-  : {
-      'x-user-api-key': apiKey(),
-      'x-org-id': ORG_ID,
-      'x-project-id': PROJECT_ID,
-    }
+const authHeadersFor = () => ({ 'x-api-key': apiKey() })
 
 let accountCache = { at: 0, items: [] }
 
