@@ -3,7 +3,7 @@ const crypto = require('crypto')
 // Direct Airtable access. Base IDs and signing secret are supplied by server-side environment variables.
 const PRIMARY_BASE_ID = process.env.AUTOM8_AIRTABLE_BASE_ID || process.env.AIRTABLE_BASE_ID || ''
 const AIRTABLE_BASE_ID = PRIMARY_BASE_ID
-const AIRTABLE_TABLE_ID = 'tbloKNK7pmGiaEB1K' // App Auth — hardcoded
+const AIRTABLE_TABLE_ID = 'tblIBctFLzeOKFuNH'
 const SESSION_COOKIE = 'matai_session'
 const SESSION_TTL_SECONDS = 60 * 60 * 24 * 30
 const CAPTCHA_TTL_SECONDS = 3 * 60
